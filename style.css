@@ -12,8 +12,8 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-    justify-content: flex-start; /* Posiciona no topo */
+    align-items: center;
+    justify-content: flex-start;
     min-height: 100vh;
     width: 100%;
 }
@@ -24,29 +24,49 @@ header {
     max-width: 1200px;
     height: 10vh;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
+    justify-content: flex-start;
+    padding: 20px;
     color: rgb(56, 56, 56);
+    position: relative;
 }
 
 footer {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    max-width: 1200px;
-    justify-content: flex-end;
-    padding: 2rem;
-    gap: 1rem;
+    align-items: center; 
+    padding: 20px;
+    gap: 10px;
     color: rgb(53, 53, 53);
     font-size: 0.8rem;
+}
+
+#location {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
 }
 
 #container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 10px;
+    padding: 10px;
     background-color: transparent;
-    flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
-    justify-content: center; /* Mantém o conteúdo centralizado */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #logomauricios {
@@ -62,22 +82,17 @@ footer {
     height: auto;
 }
 
-#menuicon {
-    width: 10vw;
-    max-width: 50px;
-    height: auto;
-    border-radius: 10px;
-}
-
 #label {
     font-size: 1.5rem;
-    margin: 0;
     text-align: center;
     color: white;
     background-color: transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#appointment, #aboutus, #location, #contact {
+#appointment {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,14 +103,13 @@ footer {
 }
 
 #aboutus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     text-align: justify;
-}
-
-#contact {
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    padding: 20px;
+    gap: 10px;
 }
 
 #instagramlogo {
@@ -108,11 +122,26 @@ button {
     background: rgb(49, 49, 49);
     border-radius: 7px;
     border: none;
+    cursor: pointer;
+    position: relative;
     padding: 0.5rem;
     width: 90%;
     max-width: 300px;
     font-size: 1rem;
     text-align: center;
+    transition: transform 0.3s ease-in 0s;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.6);
+    opacity: 1;
+}
+
+button:active{
+    transform: translateY(0);
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.8); /* Reduz o glow ao clicar */
 }
 
 /* Responsividade */
@@ -121,16 +150,25 @@ button {
         flex-direction: column;
         height: auto;
         align-items: center;
+        padding: 10px;
     }
 
-    #menuicon {
-        align-self: center;
+    #label {
+        position: static; 
+        transform: none;
+        margin-top: 10px;
     }
 
     footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column; 
+        align-items: flex-start; 
+        text-align: left;
+    }
+
+    #location, #contact {
+        align-items: flex-start; 
+        text-align: left;
+        width: 100%;
     }
 
     button {
