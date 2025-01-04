@@ -1,123 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lexend+Peta:wght@100..900&family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     background-color: black;
     color: white;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: flex-start; /* Posiciona no topo */
+    min-height: 100vh;
+    width: 100%;
+}
 
 header {
-    display: flex; 
-    height: 100px;
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 10px;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
     color: rgb(56, 56, 56);
-
 }
 
 footer {
     display: flex;
+    width: 100%;
+    max-width: 1200px;
     justify-content: flex-end;
-    padding: 100px;
-    gap: 15px;
+    padding: 2rem;
+    gap: 1rem;
     color: rgb(53, 53, 53);
+    font-size: 0.8rem;
 }
 
-
 #container {
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     background-color: transparent;
+    flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+    justify-content: center; /* Mantém o conteúdo centralizado */
 }
 
 #logomauricios {
-    width: 50px;
+    width: 5vw;
+    max-width: 50px;
     height: auto;
     background-color: transparent;
 }
 
 #foto1, #foto2 {
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
     height: auto;
 }
 
-
 #menuicon {
-    width: 50px;
+    width: 10vw;
+    max-width: 50px;
     height: auto;
-    margin-left: 1350px; 
     border-radius: 10px;
 }
 
 #label {
-    font-size: 20px;
+    font-size: 1.5rem;
     margin: 0;
     text-align: center;
     color: white;
     background-color: transparent;
 }
 
-#appointment {
+#appointment, #aboutus, #location, #contact {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding: 20px;
-
+    gap: 1rem;
+    padding: 2rem;
+    max-width: 90%;
+    text-align: center;
 }
 
 #aboutus {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 25px;
-    text-align: justify;
     max-width: 600px;
-    gap: 20px;
-}
-
-#location {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 30px;
-    padding: 20px;
+    text-align: justify;
 }
 
 #contact {
-    display: flex;
-    justify-content: space-between;
-
-    margin-right: auto;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 #instagramlogo {
-    width: 50px;
+    width: 10vw;
+    max-width: 50px;
+    height: auto;
 }
 
 button {
     background: rgb(49, 49, 49);
     border-radius: 7px;
-    border-color: transparent;
-    border-width: 1px;
-    padding: 2px;
-    width: 300px;
-    font-size: 16px;
-    
-    
+    border: none;
+    padding: 0.5rem;
+    width: 90%;
+    max-width: 300px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    #menuicon {
+        align-self: center;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
 }
